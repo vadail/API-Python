@@ -216,6 +216,18 @@ Ejemplo de salida:
 {"text":"Learn Serverless","id":"ee6490d0-aa11e6-9ede-afdfa051af86","createdAt":1479138570824,"checked":true,"updatedAt":1479138570824}%
 ```
 
+### Traducir una tarea
+
+```bash
+# Replace the <id> part with a real id from your todos table
+curl -X GET https://XXXXXXX.execute-api.us-east-1.amazonaws.com/dev/todos/<id>/<language>
+```
+
+Ejemplo de salida:
+```bash
+{"text":"Texto traducido automaticamente","id":"ee6490d0-aa11e6-9ede-afdfa051af86","createdAt":1479138570824,"checked":true,"updatedAt":1479138570824}%
+```
+
 ### Borrar una tarea
 
 ```bash
