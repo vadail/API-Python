@@ -225,7 +225,7 @@ curl -X GET https://XXXXXXX.execute-api.us-east-1.amazonaws.com/dev/todos/<id>/<
 
 Ejemplo de salida:
 ```bash
-{"text":"Texto traducido","id":"ee6490d0-aa11e6-9ede-afdfa051af86","createdAt":1479138570824,"checked":true,"updatedAt":1479138570824}%
+{"text":"Texto traducido automaticamente","id":"ee6490d0-aa11e6-9ede-afdfa051af86","createdAt":1479138570824,"checked":true,"updatedAt":1479138570824}%
 ```
 
 ### Borrar una tarea
