@@ -1,4 +1,22 @@
-- name: says hello to the world by default
+- name: Create Todo
+  endpoint: {function: create}
+  request:
+    headers:
+      'Content-Type': application/json
+    body: {"text": "Test Todo", "id": "99999999-9999-9999-9999-999999999999"}
+  response:
+    status: 200
+- name: List Todos
   endpoint: {function: list}
   response:
-    body: "[]"
+    status: 200
+- name: Get Todo
+  endpoint: {function: get}
+  path: todos/99999999-9999-9999-9999-999999999999
+  response:
+    status: 200
+- name: Delete Todo
+  endpoint: {function: get}
+  path: todos/99999999-9999-9999-9999-999999999999
+  response:
+    status: 200

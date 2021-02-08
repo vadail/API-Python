@@ -74,12 +74,12 @@ class TodoDAO(object):
         # list the todos from the database
         return self.table.scan()["Items"]
 
-    def put_item(self, text):
-
+    def put_item(self, text, id=None):
+        
         timestamp = str(time.time())
 
         item = {
-            'id': str(uuid.uuid1()),
+            'id': str(uuid.uuid1()) if (id == None ) else id,
             'text': text,
             'checked': False,
             'createdAt': timestamp,
