@@ -1,18 +1,10 @@
-import os
-
-import boto3
-dynamodb = boto3.resource('dynamodb')
+from models import todoDAO
 
 
-def delete(event, context):
-    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
+def lambda_handler(event, context):
 
-    # delete the todo from the database
-    table.delete_item(
-        Key={
-            'id': event['pathParameters']['id']
-        }
-    )
+    # delete todo
+    todoDAO.TodoDAO().delete_item(event['pathParameters']['id'])
 
     # create a response
     response = {
