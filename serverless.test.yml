@@ -1,0 +1,4 @@
+- name: says hello to the world by default
+  endpoint: {function: list}
+  response:
+    body: "[]"
