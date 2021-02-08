@@ -5,7 +5,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "postinstall": "pip3 install --user --upgrade pipenv && pipenv install",
+    "postinstall": "pip3 install -r requirements.txt",
     "test": "sh tests/runAll.sh"
   },
   "devDependencies": {
