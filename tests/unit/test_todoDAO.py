@@ -17,10 +17,28 @@ class TestTodoDAOFunctions(unittest.TestCase):
     
         dynamodb = boto3.resource('dynamodb')
         table_name = os.environ['DYNAMODB_TABLE']
-        table = dynamodb.create_table(
-                            TableName=table_name,
-                            KeySchema=[{'AttributeName': 'id','KeyType': 'HASH'}],
-                            AttributeDefinitions=[{'AttributeName': 'id','AttributeType': 'S'}])
+        
+        params = {
+            "TableName": table_name,
+            "KeySchema": [
+                {
+                    'AttributeName': 'id',
+                    'KeyType': 'HASH'
+                }
+            ],
+            "AttributeDefinitions": [
+                {
+                    'AttributeName': 'id',
+                    'AttributeType': 'S'
+                }
+            ],
+            "ProvisionedThroughput": {
+                'ReadCapacityUnits': 1,
+                'WriteCapacityUnits': 1
+            }
+        }
+
+        table = dynamodb.create_table(**params)
                     
         timestamp = str(time.time())
         
@@ -48,11 +66,29 @@ class TestTodoDAOFunctions(unittest.TestCase):
     
         dynamodb = boto3.resource('dynamodb')
         table_name = os.environ['DYNAMODB_TABLE']
-        table = dynamodb.create_table(
-                            TableName=table_name,
-                            KeySchema=[{'AttributeName': 'id','KeyType': 'HASH'}],
-                            AttributeDefinitions=[{'AttributeName': 'id','AttributeType': 'S'}])
-                    
+        
+        params = {
+            "TableName": table_name,
+            "KeySchema": [
+                {
+                    'AttributeName': 'id',
+                    'KeyType': 'HASH'
+                }
+            ],
+            "AttributeDefinitions": [
+                {
+                    'AttributeName': 'id',
+                    'AttributeType': 'S'
+                }
+            ],
+            "ProvisionedThroughput": {
+                'ReadCapacityUnits': 1,
+                'WriteCapacityUnits': 1
+            }
+        }
+
+        table = dynamodb.create_table(**params)
+                 
         timestamp = str(time.time())
         
         data = {
@@ -79,11 +115,29 @@ class TestTodoDAOFunctions(unittest.TestCase):
     
         dynamodb = boto3.resource('dynamodb')
         table_name = os.environ['DYNAMODB_TABLE']
-        table = dynamodb.create_table(
-                            TableName=table_name,
-                            KeySchema=[{'AttributeName': 'id','KeyType': 'HASH'}],
-                            AttributeDefinitions=[{'AttributeName': 'id','AttributeType': 'S'}])
-              
+        
+        params = {
+            "TableName": table_name,
+            "KeySchema": [
+                {
+                    'AttributeName': 'id',
+                    'KeyType': 'HASH'
+                }
+            ],
+            "AttributeDefinitions": [
+                {
+                    'AttributeName': 'id',
+                    'AttributeType': 'S'
+                }
+            ],
+            "ProvisionedThroughput": {
+                'ReadCapacityUnits': 1,
+                'WriteCapacityUnits': 1
+            }
+        }
+
+        table = dynamodb.create_table(**params)
+          
         data = {'text': "Test Todo"}
         
         todoDB = todos.models.todoDAO.TodoDAO()
@@ -102,11 +156,29 @@ class TestTodoDAOFunctions(unittest.TestCase):
     
         dynamodb = boto3.resource('dynamodb')
         table_name = os.environ['DYNAMODB_TABLE']
-        table = dynamodb.create_table(
-                            TableName=table_name,
-                            KeySchema=[{'AttributeName': 'id','KeyType': 'HASH'}],
-                            AttributeDefinitions=[{'AttributeName': 'id','AttributeType': 'S'}])
-                    
+        
+        params = {
+            "TableName": table_name,
+            "KeySchema": [
+                {
+                    'AttributeName': 'id',
+                    'KeyType': 'HASH'
+                }
+            ],
+            "AttributeDefinitions": [
+                {
+                    'AttributeName': 'id',
+                    'AttributeType': 'S'
+                }
+            ],
+            "ProvisionedThroughput": {
+                'ReadCapacityUnits': 1,
+                'WriteCapacityUnits': 1
+            }
+        }
+
+        table = dynamodb.create_table(**params)
+            
         timestamp = str(time.time())
         
         data = {
@@ -134,10 +206,28 @@ class TestTodoDAOFunctions(unittest.TestCase):
     
         dynamodb = boto3.resource('dynamodb')
         table_name = os.environ['DYNAMODB_TABLE']
-        table = dynamodb.create_table(
-                            TableName=table_name,
-                            KeySchema=[{'AttributeName': 'id','KeyType': 'HASH'}],
-                            AttributeDefinitions=[{'AttributeName': 'id','AttributeType': 'S'}])
+        
+        params = {
+            "TableName": table_name,
+            "KeySchema": [
+                {
+                    'AttributeName': 'id',
+                    'KeyType': 'HASH'
+                }
+            ],
+            "AttributeDefinitions": [
+                {
+                    'AttributeName': 'id',
+                    'AttributeType': 'S'
+                }
+            ],
+            "ProvisionedThroughput": {
+                'ReadCapacityUnits': 1,
+                'WriteCapacityUnits': 1
+            }
+        }
+
+        table = dynamodb.create_table(**params)
                     
         timestamp = str(time.time())
         
@@ -168,11 +258,29 @@ class TestTodoDAOFunctions(unittest.TestCase):
     
         dynamodb = boto3.resource('dynamodb')
         table_name = os.environ['DYNAMODB_TABLE']
-        table = dynamodb.create_table(
-                            TableName=table_name,
-                            KeySchema=[{'AttributeName': 'id','KeyType': 'HASH'}],
-                            AttributeDefinitions=[{'AttributeName': 'id','AttributeType': 'S'}])
-                    
+        
+        params = {
+            "TableName": table_name,
+            "KeySchema": [
+                {
+                    'AttributeName': 'id',
+                    'KeyType': 'HASH'
+                }
+            ],
+            "AttributeDefinitions": [
+                {
+                    'AttributeName': 'id',
+                    'AttributeType': 'S'
+                }
+            ],
+            "ProvisionedThroughput": {
+                'ReadCapacityUnits': 1,
+                'WriteCapacityUnits': 1
+            }
+        }
+
+        table = dynamodb.create_table(**params)
+                   
         timestamp = str(time.time())
         
         data = {
