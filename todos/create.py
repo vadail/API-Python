@@ -11,7 +11,9 @@ def lambda_handler(event, context):
         logging.error("Validation Failed")
         raise Exception("Couldn't create the todo item.")
 
-    item = todoDAO.TodoDAO().put_item(data['text'], data['id'] if ('id' in data) else None)
+    item = todoDAO.TodoDAO().put_item(
+        data['text'],
+        data['id'] if ('id' in data) else None)
 
     # create a response
     response = {

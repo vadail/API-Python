@@ -75,11 +75,15 @@ class TodoDAO(object):
         return self.table.scan()["Items"]
 
     def put_item(self, text, id=None):
-        
+
         timestamp = str(time.time())
 
+        item_id = str(uuid.uuid1())
+        if id is not None:
+            item_id = id
+
         item = {
-            'id': str(uuid.uuid1()) if (id == None ) else id,
+            'id':  item_id,
             'text': text,
             'checked': False,
             'createdAt': timestamp,

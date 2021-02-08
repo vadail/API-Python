@@ -18,8 +18,8 @@ todos/models/todoDAO.py
     C 8:0 TodoDAO - A
     M 11:4 TodoDAO.__init__ - A
     M 25:4 TodoDAO.get_table - A
+    M 77:4 TodoDAO.put_item - A
     M 61:4 TodoDAO.get_item - A
     M 72:4 TodoDAO.list_item - A
-    M 77:4 TodoDAO.put_item - A
-    M 94:4 TodoDAO.update_item - A
-    M 119:4 TodoDAO.delete_item - A
+    M 98:4 TodoDAO.update_item - A
+    M 123:4 TodoDAO.delete_item - A
