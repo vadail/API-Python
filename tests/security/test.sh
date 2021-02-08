@@ -5,8 +5,7 @@ report="tests/security/report.txt"
 result="tests/security/result.txt"
 maxIssues=0
 
-pipenv shell
-bandit -r $src | tee $report
+pipenv run bandit -r $src | tee $report
 
 echo "Security Test:">$result
 

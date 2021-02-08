@@ -4,9 +4,8 @@ testFile="todos/models/todoDAO.py"
 input="tests/coverage/coverage.txt"
 minCoverage=80
 
-pipenv shell
-coverage run --include=$testFile -m pytest tests/unit -v
-coverage report | tee $input
+pipenv run coverage run --include=$testFile -m pytest tests/unit -v
+pipenv run coverage report | tee $input
 
 while IFS= read -r line
 do
