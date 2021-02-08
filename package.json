@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "pip3 install -r requirements.txt",
-    "test": "sh tests/runAll.sh"
+    "test-complexity": "pipenv run radon cc todos/",
+    "test-coverage": "coverage run --include=todos/models/todoDAO.py -m pytest tests/unit -v",
+    "coverage-report": "coverage report"
   },
   "devDependencies": {
     "serverless-python-requirements": "^5.0.1"
