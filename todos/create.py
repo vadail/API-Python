@@ -1,33 +1,17 @@
 import json
 import logging
-import os
-import time
-import uuid
 
-import boto3
-dynamodb = boto3.resource('dynamodb')
+from models import todoDAO
 
 
-def create(event, context):
+def lambda_handler(event, context):
+
     data = json.loads(event['body'])
     if 'text' not in data:
         logging.error("Validation Failed")
         raise Exception("Couldn't create the todo item.")
-    
-    timestamp = str(time.time())
 
-    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
-
-    item = {
-        'id': str(uuid.uuid1()),
-        'text': data['text'],
-        'checked': False,
-        'createdAt': timestamp,
-        'updatedAt': timestamp,
-    }
-
-    # write the todo to the database
-    table.put_item(Item=item)
+    item = todoDAO.TodoDAO().put_item(data['text'])
 
     # create a response
     response = {

@@ -1,0 +1,6 @@
+Code Quality Test:
+  Warnings found: 0
+  Errors found: 0
+  Alerts found: 0
+Code Quality test passed
+Check more information about in tests/quality/report.txt

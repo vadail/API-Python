@@ -1,21 +1,14 @@
 import json
-import os
 
-from todos import decimalencoder
-import boto3
-dynamodb = boto3.resource('dynamodb')
+from models import todoDAO
 
 
-def list(event, context):
-    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
+def lambda_handler(event, context):
 
     # fetch all todos from the database
-    result = table.scan()
+    result = todoDAO.TodoDAO().list_item()
 
-    # create a response
-    response = {
+    return {
         "statusCode": 200,
-        "body": json.dumps(result['Items'], cls=decimalencoder.DecimalEncoder)
+        "body": json.dumps(result)
     }
-
-    return response
