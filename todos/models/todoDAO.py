@@ -18,7 +18,6 @@ class TodoDAO(object):
             self.table = self.get_table("TodoTable-local")
 
         else:
-            
             self.dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
             self.table = self.dynamodb.Table(os.environ['DYNAMODB_TABLE'])
 
