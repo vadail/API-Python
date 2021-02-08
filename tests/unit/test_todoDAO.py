@@ -19,7 +19,7 @@ class TestTodoDAOFunctions(unittest.TestCase):
         table_name = os.environ['DYNAMODB_TABLE']
         
         params = {
-            "TableName": table_name,
+            "TableName": "TodoTable-mock",
             "KeySchema": [
                 {
                     'AttributeName': 'id',
@@ -68,7 +68,7 @@ class TestTodoDAOFunctions(unittest.TestCase):
         table_name = os.environ['DYNAMODB_TABLE']
         
         params = {
-            "TableName": table_name,
+            "TableName": "TodoTable-mock",
             "KeySchema": [
                 {
                     'AttributeName': 'id',
@@ -117,7 +117,7 @@ class TestTodoDAOFunctions(unittest.TestCase):
         table_name = os.environ['DYNAMODB_TABLE']
         
         params = {
-            "TableName": table_name,
+            "TableName": "TodoTable-mock",
             "KeySchema": [
                 {
                     'AttributeName': 'id',
@@ -158,7 +158,7 @@ class TestTodoDAOFunctions(unittest.TestCase):
         table_name = os.environ['DYNAMODB_TABLE']
         
         params = {
-            "TableName": table_name,
+            "TableName": "TodoTable-mock",
             "KeySchema": [
                 {
                     'AttributeName': 'id',
@@ -208,7 +208,7 @@ class TestTodoDAOFunctions(unittest.TestCase):
         table_name = os.environ['DYNAMODB_TABLE']
         
         params = {
-            "TableName": table_name,
+            "TableName": "TodoTable-mock",
             "KeySchema": [
                 {
                     'AttributeName': 'id',
@@ -260,7 +260,7 @@ class TestTodoDAOFunctions(unittest.TestCase):
         table_name = os.environ['DYNAMODB_TABLE']
         
         params = {
-            "TableName": table_name,
+            "TableName": "TodoTable-mock",
             "KeySchema": [
                 {
                     'AttributeName': 'id',
