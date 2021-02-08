@@ -1,5 +1,5 @@
 Name                      Stmts   Miss  Cover
 ---------------------------------------------
-todos/models/todoDAO.py      44      7    84%
+todos/models/todoDAO.py      36     19    47%
 ---------------------------------------------
-TOTAL                        44      7    84%
+TOTAL                        36     19    47%

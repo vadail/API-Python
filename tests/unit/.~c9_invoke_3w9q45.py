@@ -33,7 +33,7 @@ class TestTodoDAOFunctions(unittest.TestCase):
         dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
         
         table = dynamodb.create_table(
-            TableName=os.environ['DYNAMODB_TABLE'],
+            TableName='TodoTable-mock',
             KeySchema=[
                 {
                     'AttributeName': 'id',
@@ -53,7 +53,7 @@ class TestTodoDAOFunctions(unittest.TestCase):
         )
     
         # Wait until the table exists.
-        table.meta.client.get_waiter('table_exists').wait(TableName=os.environ['DYNAMODB_TABLE'])
+        table.meta.client.get_waiter('table_exists').wait(TableName='TodoTable-mock')
         if (table.table_status != 'ACTIVE'):
             raise AssertionError()
     

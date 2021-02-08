@@ -16,8 +16,7 @@ chmod +x tests/complexity/test.sh
 check_command tests/complexity/test.sh
 
 echo -e "\n==================================================================== Unit Test ==================================================================== \n"
-chmod +x tests/unit -v
-check_command pytest tests/unit -v
+check_command pipenv run pytest tests/unit -v
 
 echo -e "\n=============================================================== Code Coverage Test ================================================================ \n"
 chmod +x tests/coverage/test.sh
