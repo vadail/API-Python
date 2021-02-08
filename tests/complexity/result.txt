@@ -1,0 +1,2 @@
+Cyclomatic Complexity Test:
+Cyclomatic Complexity test passed
