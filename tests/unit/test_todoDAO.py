@@ -4,7 +4,6 @@ import uuid
 import time
 import os
 import mock
-import warnings
 from moto import mock_dynamodb2
 from botocore.exceptions import ClientError
 
@@ -15,20 +14,6 @@ class TestTodoDAOFunctions(unittest.TestCase):
     @mock.patch.dict(os.environ, {"DYNAMODB_TABLE": "TodoTable-mock", "STAGE": "mock"})
     @mock_dynamodb2    
     def test_get_item(self):
-        
-        warnings.filterwarnings(
-            "ignore",
-            category=ResourceWarning,
-            message="unclosed.*<socket.socket.*>")
-        warnings.filterwarnings(
-            "ignore",
-            category=DeprecationWarning,
-            message="callable is None.*")
-        warnings.filterwarnings(
-            "ignore",
-            category=DeprecationWarning,
-            message="Using or importing.*")
-        """Create the mock database and table"""
 
         dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
         
