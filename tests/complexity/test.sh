@@ -3,7 +3,7 @@
 src="todos/"
 report="tests/complexity/report.txt"
 result="tests/complexity/result.txt"
-minCC=$MIN_CYCLOMATIC_COMPLEXITY
+minCC="B"
 
 pipenv run radon cc $src | tee $report
 

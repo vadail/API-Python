@@ -3,9 +3,9 @@
 src="todos/"
 report="tests/quality/report.txt"
 result="tests/quality/result.txt"
-maxError=$QUALITY_MAX_ERROR
-maxWarning=$QUALITY_MAX_WARNING
-maxAlert=$QUALITY_MAX_ALERT
+maxError=0
+maxWarning=0
+maxAlert=0
 
 pipenv run flake8 $src | tee $report
 

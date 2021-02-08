@@ -3,7 +3,7 @@
 src="todos/"
 report="tests/security/report.txt"
 result="tests/security/result.txt"
-maxIssues=$SECURITY_MAX_ISSUES
+maxIssues=0
 
 pipenv shell
 bandit -r $src | tee $report

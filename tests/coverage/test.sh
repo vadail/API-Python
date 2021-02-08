@@ -2,7 +2,7 @@
 
 testFile="todos/models/todoDAO.py"
 input="tests/coverage/coverage.txt"
-minCoverage=$MIN_COVERAGE
+minCoverage=80
 
 pipenv shell
 coverage run --include=$testFile -m pytest tests/unit -v
