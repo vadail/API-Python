@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "pip3 install -r requirements.txt",
-    "test": "pipenv run pytest"
+    "test": "sh tests/runAll.sh"
   },
   "devDependencies": {
     "serverless-python-requirements": "^5.0.1"
