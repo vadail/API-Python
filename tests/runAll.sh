@@ -31,9 +31,17 @@ chmod +x tests/security/test.sh
 check_command tests/security/test.sh
 
 echo -e "\n=================================================================  Integration Test ================================================================== \n"
-check_command sls deploy -s efimero
-check_command sls test -s efimero
-check_command sls remove -s efimero
+# Borramos el stack efimero por si se hubiera quedado algo activo
+sls remove -s efimero
+pipenv run aws logs delete-log-group --log-group-name /aws/api-gateway/serverless-rest-api-with-dynamodb-efimero
 
+# Desplegamos el stack efimero
+check_command sls deploy -s efimero
+
+# Realizamos las pruebas de integración en el stack efimero
+check_command sls test -s efimero
+
+# Borramos el stack efimero
+check_command sls remove -s efimero
 
 exit $EXIT_STATUS
