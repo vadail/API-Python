@@ -1,13 +1,13 @@
 todos/update.py
     F 8:0 lambda_handler - A
 todos/create.py
-    F 7:0 lambda_handler - A
+    F 8:0 lambda_handler - A
 todos/get.py
-    F 6:0 lambda_handler - A
+    F 7:0 lambda_handler - A
 todos/delete.py
     F 4:0 lambda_handler - A
 todos/list.py
-    F 6:0 lambda_handler - A
+    F 7:0 lambda_handler - A
 todos/translate.py
     F 37:0 translateText - A
     F 10:0 lambda_handler - A
@@ -17,9 +17,9 @@ todos/utils/decimal_encoder.py
 todos/models/todoDAO.py
     C 8:0 TodoDAO - A
     M 11:4 TodoDAO.__init__ - A
-    M 25:4 TodoDAO.get_table - A
-    M 61:4 TodoDAO.get_item - A
-    M 72:4 TodoDAO.list_item - A
-    M 77:4 TodoDAO.put_item - A
-    M 94:4 TodoDAO.update_item - A
-    M 119:4 TodoDAO.delete_item - A
+    M 26:4 TodoDAO.get_table - A
+    M 62:4 TodoDAO.get_item - A
+    M 89:4 TodoDAO.put_item - A
+    M 84:4 TodoDAO.list_item - A
+    M 110:4 TodoDAO.update_item - A
+    M 135:4 TodoDAO.delete_item - A

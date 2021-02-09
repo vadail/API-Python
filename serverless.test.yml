@@ -1,0 +1,40 @@
+- name: Create Todo
+  endpoint: {function: create}
+  request:
+    headers:
+      'Content-Type': application/json
+    body: {"text": "Test Todo", "id": "99999999-9999-9999-9999-999999999999"}
+  response:
+    status: 200
+- name: List Todos
+  endpoint: {function: list}
+  response:
+    status: 200
+- name: Get Todo
+  endpoint:
+    method: GET
+    path: /todos/99999999-9999-9999-9999-999999999999
+  response:
+    status: 200
+- name: Update Todo
+  endpoint:
+    method: PUT
+    path: /todos/99999999-9999-9999-9999-999999999999
+  request:
+    headers:
+      'Content-Type': application/json
+    body: {"text": "Test Todo Update", "checked": TRUE}
+  response:
+    status: 200
+- name: Translate Todo
+  endpoint:
+    method: GET
+    path: /todos/99999999-9999-9999-9999-999999999999/es
+  response:
+    status: 200
+- name: Delete Todo
+  endpoint:
+    method: DELETE
+    path: /todos/99999999-9999-9999-9999-999999999999
+  response:
+    status: 200

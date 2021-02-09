@@ -98,6 +98,29 @@ class TestTodoDAOFunctions(unittest.TestCase):
     
     @mock.patch.dict(os.environ, {"DYNAMODB_TABLE": "TodoTable-mock", "STAGE": "mock"})
     @mock_dynamodb2    
+    def test_put_item_with_id(self):
+    
+        dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+        table_name = os.environ['DYNAMODB_TABLE']
+        table = dynamodb.create_table(
+                            TableName=table_name,
+                            KeySchema=[{'AttributeName': 'id','KeyType': 'HASH'}],
+                            AttributeDefinitions=[{'AttributeName': 'id','AttributeType': 'S'}])
+              
+        data = {'text': "Test Todo", 'id' : "99999999-9999-9999-9999-999999999999"}
+        
+        todoDB = todos.models.todoDAO.TodoDAO()
+        item = todoDB.put_item(data["text"],data["id"])
+        
+        response = table.get_item(Key={'id':item['id']})
+        actual_output = response['Item']
+        assert actual_output == item
+        
+        table.delete()
+        self.dynamodb = None
+    
+    @mock.patch.dict(os.environ, {"DYNAMODB_TABLE": "TodoTable-mock", "STAGE": "mock"})
+    @mock_dynamodb2    
     def test_update_item(self):
     
         dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
