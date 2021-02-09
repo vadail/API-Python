@@ -5,7 +5,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "postinstall": "pip3 install -r requirements.txt",
+    "postinstall": "pip3 install -r requirements.txt && pip3 install awscli",
     "test": "sh tests/runAll.sh"
   },
   "devDependencies": {
