@@ -9,6 +9,7 @@ provider:
   runtime: python3.8
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+    STAGE: ${opt:stage, self:provider.stage}
   iamRoleStatements:
     - Effect: Allow
       Action:

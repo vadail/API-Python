@@ -9,7 +9,8 @@ class TodoDAO(object):
 
     # TodoDAO constructor
     def __init__(self):
-
+        
+        print(os.environ['STAGE'])
         if os.environ['STAGE'] == "local":
             self.dynamodb = boto3.resource(
                 'dynamodb',
@@ -59,15 +60,26 @@ class TodoDAO(object):
             return table
 
     def get_item(self, id):
-
+        
+        
+        print(id)
+        
         # fetch todo from the database
         result = self.table.get_item(
             Key={
                 'id': id
             }
         )
-
-        return result["Item"]
+        
+        
+        print(result)
+        
+        if ('Item' in result):
+            print("Devuelvo el elemento")
+            return result["Item"]
+        else:
+            print("No Devuelvo el elemento")
+            return {}
 
     def list_item(self):
 
