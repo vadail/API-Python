@@ -30,4 +30,10 @@ echo -e "\n=================================================================  Se
 chmod +x tests/security/test.sh
 check_command tests/security/test.sh
 
+echo -e "\n=================================================================  Integration Test ================================================================== \n"
+check_command sls deploy -s efimero
+check_command sls test -s efimero
+check_command sls remove -s efimero
+
+
 exit $EXIT_STATUS

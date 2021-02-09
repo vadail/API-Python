@@ -10,6 +10,7 @@ class TodoDAO(object):
     # TodoDAO constructor
     def __init__(self):
 
+        print(os.environ['STAGE'])
         if os.environ['STAGE'] == "local":
             self.dynamodb = boto3.resource(
                 'dynamodb',
@@ -67,19 +68,26 @@ class TodoDAO(object):
             }
         )
 
-        return result["Item"]
+        if ('Item' in result):
+            return result["Item"]
+        else:
+            return {}
 
     def list_item(self):
 
         # list the todos from the database
         return self.table.scan()["Items"]
 
-    def put_item(self, text):
+    def put_item(self, text, id=None):
 
         timestamp = str(time.time())
 
+        item_id = str(uuid.uuid1())
+        if id is not None:
+            item_id = id
+
         item = {
-            'id': str(uuid.uuid1()),
+            'id':  item_id,
             'text': text,
             'checked': False,
             'createdAt': timestamp,
