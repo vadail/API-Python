@@ -32,7 +32,7 @@ check_command tests/security/test.sh
 
 echo -e "\n=================================================================  Integration Test ================================================================== \n"
 # Borramos el stack efimero
-check_command sls remove -s efimero
+sls remove -s efimero
 wait
 # Desplegamos el stack efimero
 check_command sls deploy -s efimero 
