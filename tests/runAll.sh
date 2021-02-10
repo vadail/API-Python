@@ -31,14 +31,13 @@ chmod +x tests/security/test.sh
 check_command tests/security/test.sh
 
 echo -e "\n=================================================================  Integration Test ================================================================== \n"
-# Desplegamos el stack efimero
-check_command sls deploy --force -s efimero 
-
-# Realizamos las pruebas de integración en el stack efimero
-check_command sls test -s efimero
-
 # Borramos el stack efimero
 check_command sls remove -s efimero
 wait
+# Desplegamos el stack efimero
+check_command sls deploy -s efimero 
+
+# Realizamos las pruebas de integración en el stack efimero
+check_command sls test -s efimero
 
 exit $EXIT_STATUS
